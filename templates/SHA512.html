@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="content-section">
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">SHA 512 Hash</legend>
+                <div class="form-group">
+                    {{ form.plaintext.label(class="form-control-label") }}
+                    {% if form.plaintext.errors %}
+                        {{ form.plaintext(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.plaintext.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.plaintext(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+            </fieldset>
+            <div class="form-group">
+                {{ form.submit(class="btn btn-outline-info") }}
+            </div>
+        </form>
+        <article class="media content-section">
+          <div class="media-body">
+            {% if hash %}
+                <textarea id="output" placeholder="Output" spellcheck="true" rows="4" cols="50">{{hash}}</textarea>
+
+            {% else %}
+                <p class="article-content"> Output</p>
+            {% endif %}
+          </div>
+        </article>
+    </div>
+
+{% endblock content %}

@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="content-section">
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Generate Cryptographic Key</legend>
+            </fieldset>
+            <div class="form-group">
+                {{ form.keysize.label(class="form-control-label") }}
+                {{ form.keysize(class="form-control form-control-lg") }}
+
+            </div>
+            <div class="form-group">
+                {{ form.submit(class="btn btn-outline-info") }}
+            </div>
+        </form>
+        <div class="form-group">
+           {% if key %}
+                <div class="form-group">
+                    <label class="form-control-label">output</label>
+                    <textarea class="form-control" rows="3">{{key}}</textarea>
+                </div>
+            {% else %}
+                <label class="form-control-label">output</label>
+                <textarea class="form-control" rows="3">{{key}}</textarea>
+            {% endif %}
+        </div>
+
+    </div>
+
+{% endblock content %}

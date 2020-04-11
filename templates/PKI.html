@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="content-section">
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Public Private Key Generator</legend>
+                <div class="form-group">
+                    {{ form.keysize.label(class="form-control-label") }}
+                    {% if form.keysize.errors %}
+                        {{ form.keysize(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.keysize.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.keysize(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+            </fieldset>
+            <div class="form-group">
+                {{ form.submit(class="btn btn-outline-info") }}
+            </div>
+        </form>
+        <article class="media content-section">
+          <div class="media-body">
+            {% if key %}
+                <textarea id="Private Key" placeholder="Output" spellcheck="true" rows="4" cols="50">{{key.private}}</textarea>
+                <textarea id="Public Key" placeholder="Output" spellcheck="true" rows="4" cols="50">{{key.public}}</textarea>
+
+            {% else %}
+                <p class="article-content"> Output</p>
+            {% endif %}
+          </div>
+        </article>
+    </div>
+
+{% endblock content %}

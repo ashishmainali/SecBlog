@@ -30,5 +30,5 @@ class KeyForm(FlaskForm):
     submit = SubmitField('Generate Key')
 
 class PKIForm(FlaskForm):
-    keysize = keysize = SelectField('Select keysize (Byte)',choices = ['1024','2048','3072','4096'])
+    keysize = SelectField('Select keysize (Byte)',choices = ['1024','2048','3072','4096'])
     submit = SubmitField('Generate Key')

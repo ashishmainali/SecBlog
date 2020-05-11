@@ -31,5 +31,5 @@ class KeyForm(FlaskForm):
 
 class PKIForm(FlaskForm):
     keysize = IntegerField('Key Size Bits:',
-                           validators=[DataRequired(),NumberRange(min=1024, max=4096,message='Invalid Key size! Ranage: 1024 - 4096')])
+                           validators=[DataRequired(),NumberRange(min=1024, max=4096)])
     submit = SubmitField('Generate Key')

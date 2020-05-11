@@ -36,15 +36,15 @@ class Post(db.Model):
 
 posts = [
     {
-        'author': 'Corey Schafer',
-        'title': 'Blog Post 1',
-        'content': 'First post content',
-        'date_posted': 'April 20, 2018'
+        'author': 'Ashish Mainali',
+        'title': 'Added Private Key Generation Modulde',
+        'content': 'Added private key generatation modulde to the website today.',
+        'date_posted': 'April 30, 2020'
     },
     {
-        'author': 'Jane Doe',
-        'title': 'Blog Post 2',
-        'content': 'Second post content',
+        'author': 'Anon',
+        'title': 'Testing',
+        'content': 'Tested the private key generation module and it is working well.',
         'date_posted': 'April 21, 2018'
     }
 ]

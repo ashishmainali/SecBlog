@@ -16,8 +16,8 @@ app.config['SECRET_KEY'] = '5791628bb0b13ce0c676dfde280ba245'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
 db = SQLAlchemy(app)
 
-app.config["IMAGE_UPLOADS"] = os.getcwd() + '\\uploads\\'
-app.config["IMAGE_UPLOADS_REAVEAL"] = os.getcwd() + '\\reveal\\'
+app.config["IMAGE_UPLOADS"] = os.getcwd() + '/uploads/'
+app.config["IMAGE_UPLOADS_REAVEAL"] = os.getcwd() + '/reveal/'
 app.config["ALLOWED_IMAGE_EXTENSIONS"] = ["JPEG", "JPG", "PNG", "GIF"]
 app.config["MAX_IMAGE_FILESIZE"] = 0.5 * 1024 * 1024
 

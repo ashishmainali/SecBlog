@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+    {% block script %} {% endblock %}
 
     {% if title %}
         <title>Information Security - {{ title }}</title>
@@ -28,9 +29,6 @@
             <div class="navbar-nav mr-auto">
               <a class="nav-item nav-link" href="{{ url_for('home') }}">Home</a>
               <a class="nav-item nav-link" href="{{ url_for('about') }}">About</a>
-              <a class="nav-item nav-link" href="{{ url_for('SHA512') }}">SHA512</a>
-              <a class="nav-item nav-link" href="{{ url_for('keygen') }}">Generate Keys</a>
-              <a class="nav-item nav-link" href="{{ url_for('PKI') }}">Generate Asymmetric Keys</a>
 
             </div>
             <!-- Navbar Right Side -->
@@ -58,13 +56,13 @@
         </div>
         <div class="col-md-4">
           <div class="content-section">
-            <h3>Our Sidebar</h3>
-            <p class='text-muted'>You can put any information here you'd like.
+            <h3>Our Services</h3>
+            <p class='text-muted'>Choose the cryptographic sevices below:
               <ul class="list-group">
-                <li class="list-group-item list-group-item-light">Latest Posts</li>
-                <li class="list-group-item list-group-item-light">Announcements</li>
-                <li class="list-group-item list-group-item-light">Calendars</li>
-                <li class="list-group-item list-group-item-light">etc</li>
+                <li class="list-group-item list-group-item-light"> <a href = "/reveal">Reveal Messages</a></li>
+                <li class="list-group-item list-group-item-light"><a href="/hide">Hide Messages </a></li>
+                <li class="list-group-item list-group-item-light"><a href="/SHA512">SHA512</a></li>
+                <li class="list-group-item list-group-item-light"><a href="/pki">Generate Keys</a></li>
               </ul>
             </p>
           </div>

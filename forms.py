@@ -22,7 +22,7 @@ class LoginForm(FlaskForm):
     submit = SubmitField('Login')
 
 class SHA512Form(FlaskForm):
-    plaintext = StringField('Input',validators=[DataRequired()])
+    plaintext = StringField('Text Input',validators=[DataRequired()])
     submit = SubmitField('SHA512 Hash')
 
 class KeyForm(FlaskForm):
@@ -30,5 +30,8 @@ class KeyForm(FlaskForm):
     submit = SubmitField('Generate Key')
 
 class PKIForm(FlaskForm):
-    keysize = SelectField('Select keysize (Byte)',choices = ['1024','2048','3072','4096'])
+    keysize = IntegerField('Key Size Bits:',
+                           validators=[DataRequired(),NumberRange(min=1024, max=4096)])
     submit = SubmitField('Generate Key')
+
+    
